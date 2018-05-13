@@ -14,7 +14,9 @@ const domain = process.env['DOMAIN']; //also known as tenantId
 const subscriptionId = process.env['AZURE_SUBSCRIPTION_ID'];
 var client;
 
-console.log(secret);
+const t = new Date
+const postData = JSON.stringify ({ControllerUtcTimestamp: t.getUTCHours() + ":" + t.getUTCMinutes() + ":" + t.getUTCSeconds()})
+console.log(postData);
 
 //an example to list resource groups in a subscription
 msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain).then((creds) => {
