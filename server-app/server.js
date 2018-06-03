@@ -5,19 +5,17 @@ const errorhandler = require('errorhandler')
 const bodyParser = require('body-parser')
 const routes = require('./routes')
 
-let store = []
-
 
 let app = express()
 
 app.use(bodyParser.json())
 app.use(logger('dev'))
 app.use(errorhandler())
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   if (!req.store)
     req.store = store
   next()
-})
+})*/
 
 app.get('/results', routes.getResults)
 app.post('/flush', routes.flushStore)

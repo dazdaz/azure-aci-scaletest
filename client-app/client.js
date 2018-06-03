@@ -1,15 +1,16 @@
 
 const httpClient = require('http')
 const t = new Date
-const postData = JSON.stringify ({UtcTimestamp: t.getUTCHours() + ":" + t.getUTCMinutes() + ":" + t.getUTCSeconds()})
+const postData = JSON.stringify ({timestamp: t.getUTCHours() + ":" + t.getUTCMinutes() + ":" + t.getUTCSeconds()})
 
 console.log(postData)
 const options = {
   //hostname: 'mockbin.com',
   //port: 80,
   hostname: '40.76.26.60',
+  //hostname: 'localhost',
   port: 3000,
-  path: '/',
+  path: '/timestamp',
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
