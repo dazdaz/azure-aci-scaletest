@@ -20,6 +20,6 @@ app.use(errorhandler())
 app.get('/results', routes.getResults)
 app.post('/flush', routes.flushStore)
 app.post('/timestamp', routes.addTimestamp)
-
+app.post('/controller', routes.controller)
 
 app.listen(3000)
