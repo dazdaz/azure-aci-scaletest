@@ -47,10 +47,12 @@ module.exports = {
                                     "environmentVariables": [],
                                     "image": "",
                                     "ports": [],
-                                    "resources": {}
+                                    "resources": {
+                                      "requests": {}
+                                    }
                                     }
                             }
-        containerObject.properties.resources = {
+        containerObject.properties.resources.requests = {
                           "cpu": 1,
                           "memoryInGB": 1
                         }
@@ -72,7 +74,7 @@ module.exports = {
 function generateContainerJson(req, containerGroupName, containernumber){
   let options = {
     method: 'PUT',
-    url: "https://management.azure.com/subscriptions/" + req.body.subscriptionId + "/resourceGroups/" + req.body.resourceGroupName + "/providers/Microsoft.ContainerInstance/containerGroups/" + containerGroupName "?api-version=2018-04-01",
+    url: "https://management.azure.com/subscriptions/" + req.body.subscriptionId + "/resourceGroups/" + req.body.resourceGroupName + "/providers/Microsoft.ContainerInstance/containerGroups/" + containerGroupName +"?api-version=2018-04-01",
     headers: {
       'user-agent': 'MyTestApp/1.0'
     },
