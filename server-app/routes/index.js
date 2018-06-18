@@ -78,7 +78,7 @@ function generateContainerJson(req, containerGroupName, containernumber){
     },
     body: 
       {
-      "id": "/subscriptions/" + req.body.subscriptionId + "/resourceGroups/" + req.body.resourceGroupName + "/providers/Microsoft.ContainerInstance/containerGroups/demo1",
+      "id": "/subscriptions/" + req.body.subscriptionId + "/resourceGroups/" + req.body.resourceGroupName + "/providers/Microsoft.ContainerInstance/containerGroups/" + containerGroupName,
       "location": req.body.location,
       "name": containerGroupName,
       "properties": {
