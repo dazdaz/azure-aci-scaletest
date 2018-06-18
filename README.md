@@ -48,7 +48,7 @@ Prerequisites for the tool to be used:
  b. <<URL>>/controller : This api takes JSON input as http Post data and spins up the ACI instances.
  c. <<URL>>/flushStore : This api flushes all the results collected. This should be called before performing the next test to spin up the ACIs.
  
- Sample command to spin up the controller: 
+ Sample command to spin up the ACIs controller: 
  
  curl --header "Content-Type: application/json" --request POST --data '{"acrName": "<<acrName>>.azurecr.io", "imageName": "<<name of the containerimage>>", "numberOfContainers": "<<number of ACIs you would want to sin up>>", "subscriptionId": "<<Azure subscription ID>>", "resourceGroupName": "<<name of the resource group already provisioned>>", "location": "Azure Region name on which the resource group is provisioned", "acrUserName": "<<ACR User Name>>", "acrPassword": "ACR Password", "servicePrincipalId": "", "servicePrincipalSecret" : "", "tennatId" : ""}' http://<<IP address of the server>>:3000/controller
  
