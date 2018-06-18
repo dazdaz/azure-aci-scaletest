@@ -57,7 +57,9 @@ module.exports = {
                           "memoryInGB": 1
                         }
     
-  
+      if (i === 0){ 
+        containerObject.properties.ports.push({"ports": 80})
+      }
       containerObject.name = "demo" + (i+1)    
       containerObject.properties.image = req.body.acrName + "/" + req.body.imageName
       containers.push(containerObject)    
